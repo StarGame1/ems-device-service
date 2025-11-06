@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/devices")
+@RequestMapping("/api/devices")
 @CrossOrigin(origins = "*")
 public class DeviceController {
     private final DeviceService deviceService;
@@ -24,7 +24,7 @@ public class DeviceController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Device> getDeviceById(@RequestParam long id) {
+    public ResponseEntity<Device> getDeviceById(@PathVariable long id) {
         try{
             return ResponseEntity.ok(deviceService.findById(id));
         } catch (Exception e){

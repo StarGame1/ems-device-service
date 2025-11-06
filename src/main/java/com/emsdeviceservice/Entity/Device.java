@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 public class Device {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(nullable = false)
     private String name;
@@ -16,6 +16,8 @@ public class Device {
 
     @Column(name = "user_id")
     private Long userId;
+
+    public Device() {}
 
     public long getId() {
         return id;

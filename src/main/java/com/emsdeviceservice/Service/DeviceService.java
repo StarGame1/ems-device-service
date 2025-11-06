@@ -26,7 +26,7 @@ public class DeviceService {
     }
 
     public List<Device> findByDeviceName(String deviceName) {
-        return deviceRepository.findByDeviceName(deviceName).orElseThrow(()->new EntityNotFoundException("Device not found"));
+        return deviceRepository.findByName(deviceName).orElseThrow(()->new EntityNotFoundException("Device not found"));
     }
 
     public List<Device> findByUserId(Long userId) {
